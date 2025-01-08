@@ -1,0 +1,47 @@
+add_newline = false
+format = """$directory$git_branch$git_status$character"""
+right_format = """$all"""
+
+[character]
+success_symbol = '[❯](bold #42f56c)'
+error_symbol = '[❯](bold red)' #✗
+
+[line_break]
+disabled = true
+
+[directory]
+style = '#00a5ff bold'
+truncation_length = 1
+truncate_to_repo = false
+
+[git_branch]
+format = "[⟨$branch⟩]($style)"
+style = " bright-black"
+#style = " #f0a030"
+
+[git_status]
+format = ' ([$all_status$ahead_behind]($style) )' #⟨⟩
+style = "bold #f0a030"
+stashed = '*${count}'
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕${count}"
+conflicted = "=${count}"
+deleted = "✘${count}"
+renamed = "»${count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+
+[aws]
+format = '| [($profile )(\($region\) )]($style) '
+style = 'bold cyan'
+#symbol = '🅰  '
+
+[python]
+format = '(bold green)[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style) '
+symbol = 'py' # 󰌠  🐍 👾  |
+style = 'bright-purple'
+version_format = '${major}.${minor}'
+disabled = false
+
